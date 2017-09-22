@@ -51,7 +51,7 @@ public class tdf extends Application {
         try (Stream<String> stream = Stream.of(content.toLowerCase().split("\\W+")).parallel()) {
             wordFreq = stream
                     .collect(Collectors.groupingBy(String::toString, Collectors.counting()));
-            //wordFreq = sortByValue(wordFreq);
+            wordFreq = sortByValue(wordFreq);
             wordFreq.forEach((k,v)-> System.out.println(k + ":" + v));
             return wordFreq;
         }
