@@ -26,7 +26,7 @@ public class tdf extends Application {
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("WFH");
-        Map<String, Long> wordFreq = genWordFreqMap("c://temp//hamlet.txt");
+        Map<String, Long> wordFreq = genWordFreqMap("./resources/hamlet.txt");
         wordFreq.forEach((k,v)-> series1.getData().add(new XYChart.Data(k, v)));
 
         Scene scene  = new Scene(barChart,800,600);
